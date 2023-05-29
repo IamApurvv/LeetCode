@@ -22,3 +22,18 @@ public:
 };
 
 // another approach in short
+
+class Solution
+{
+public:
+    int findMaxK(vector<int> &nums)
+    {
+        int ans = -1;
+        for (int it : nums)
+        {
+            if (it > 0 && count(nums.begin(), nums.end(), -it))
+                ans = max(ans, it);
+        }
+        return ans;
+    }
+};
