@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maximumGroups(vector<int>& grades) {
+        int s=grades.size();
+        int k=2*s,ans{};
+        for(int i{1}; i<=s; i++)
+        {
+            if(k==(i*i)+i){
+            ans=i; 
+            break;
+            }
+            else if(k<(i*i)+i){
+            ans=i-1;
+            break;
+        }
+        }
+        return ans;
+    }
+};
